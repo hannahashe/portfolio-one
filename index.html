@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio for a design-minded front-end developer showcasing accessible, user-centred web projects."
+  />
+  <title>Moss A | Design-Minded Developer</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --surface: #fffaf2;
+      --text: #241f1a;
+      --muted: #6d6258;
+      --accent: #6f4dff;
+      --accent-dark: #4630b8;
+      --border: #ded2c3;
+      --shadow: 0 1rem 2.5rem rgba(36, 31, 26, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--accent);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -4rem;
+      left: 1rem;
+      z-index: 999;
+      padding: 0.75rem 1rem;
+      background: var(--text);
+      color: white;
+      border-radius: 999px;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 243, 236, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 6rem 0 4rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      max-width: 860px;
+      font-size: clamp(2.5rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      font-weight: 800;
+    }
+
+    .hero .lead {
+      max-width: 720px;
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .btn-primary-custom,
+    .btn-outline-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .btn-primary-custom {
+      background: var(--accent);
+      color: white;
+      border: 2px solid var(--accent);
+    }
+
+    .btn-primary-custom:hover,
+    .btn-primary-custom:focus {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: white;
+    }
+
+    .btn-outline-custom {
+      color: var(--text);
+      border: 2px solid var(--border);
+      background: transparent;
+    }
+
+    .btn-outline-custom:hover,
+    .btn-outline-custom:focus {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      background: var(--surface);
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      letter-spacing: -0.055em;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .project-card {
+      height: 100%;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .project-card h3 {
+      margin-top: 1rem;
+      font-size: 1.35rem;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    .project-image {
+      display: grid;
+      min-height: 180px;
+      place-items: center;
+      border-radius: 1.1rem;
+      background:
+        radial-gradient(circle at top left, rgba(111, 77, 255, 0.28), transparent 35%),
+        linear-gradient(135deg, #f1e8da, #ffffff);
+      border: 1px solid var(--border);
+      color: var(--accent-dark);
+      font-size: 2.3rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      padding: 0;
+      margin: 1rem 0 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 0.35rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .about-panel,
+    .contact-panel {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-item {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: rgba(255, 250, 242, 0.7);
+    }
+
+    .skill-item i {
+      margin-bottom: 0.75rem;
+      color: var(--accent-dark);
+      font-size: 1.3rem;
+    }
+
+    .skill-item h3 {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .skill-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--bg);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding-top: 4.5rem;
+      }
+
+      .about-panel,
+      .contact-panel {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="#top">Moss A</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow"><i class="fa-solid fa-sparkles" aria-hidden="true"></i> Design-minded developer</p>
+        <h1>Accessible, thoughtful web projects with clear structure and strong visual direction.</h1>
+        <p class="lead">
+          I’m a junior developer with a background in communications, operations and creative problem-solving. I build user-centred interfaces that prioritise clarity, accessibility and real-world usefulness.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary-custom" href="#projects">
+            View projects <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a class="btn-outline-custom" href="mailto:hannahashe13@gmail.com">
+            Contact me <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="projects-heading">Selected projects</h2>
+          <p>A small collection of design and development work, from full-stack applications to accessible static sites and experimental interface ideas.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <h3>Open Circle</h3>
+              <p>
+                A Django events directory focused on structured accessibility information, organiser permissions and moderation workflows for safer, more trustworthy event listings.
+              </p>
+              <ul class="tag-list" aria-label="Project technologies">
+                <li>Django</li>
+                <li>PostgreSQL</li>
+                <li>Bootstrap</li>
+                <li>Accessibility</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <h3>Let’s Go Foraging</h3>
+              <p>
+                A planned web presence for a foraging instructor, designed to showcase upcoming walks, testimonials, seasonal content and future booking functionality.
+              </p>
+              <ul class="tag-list" aria-label="Project technologies">
+                <li>UX planning</li>
+                <li>Django</li>
+                <li>Content design</li>
+                <li>Admin UX</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <h3>Custom Map Interface</h3>
+              <p>
+                An experimental map-based interface using MapLibre, custom markers and overlay UI patterns for location-based submissions and storytelling.
+              </p>
+              <ul class="tag-list" aria-label="Project technologies">
+                <li>JavaScript</li>
+                <li>MapLibre</li>
+                <li>UI design</li>
+                <li>Interaction design</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <i class="fa-solid fa-universal-access"></i>
+              </div>
+              <h3>Inclusive Futures</h3>
+              <p>
+                A one-page static site exploring diversity and inclusion, built with semantic HTML, responsive Bootstrap components and accessibility-conscious design choices.
+              </p>
+              <ul class="tag-list" aria-label="Project technologies">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap</li>
+                <li>WCAG</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <i class="fa-solid fa-table-columns"></i>
+              </div>
+              <h3>Connected Self Dashboard</h3>
+              <p>
+                A personal relationship-mapping dashboard concept with editable people, connections and interface patterns for understanding social systems visually.
+              </p>
+              <ul class="tag-list" aria-label="Project technologies">
+                <li>JavaScript</li>
+                <li>Data modelling</li>
+                <li>UX logic</li>
+                <li>MVP design</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <i class="fa-solid fa-pen-ruler"></i>
+              </div>
+              <h3>Portfolio design system</h3>
+              <p>
+                This portfolio itself acts as a compact design system, using reusable cards, tags, layout sections and accessible navigation for a polished static site.
+              </p>
+              <ul class="tag-list" aria-label="Project technologies">
+                <li>Static site</li>
+                <li>Responsive design</li>
+                <li>CSS variables</li>
+                <li>Branding</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-panel">
+          <div class="row align-items-start g-4">
+            <div class="col-lg-5">
+              <div class="section-heading mb-0">
+                <h2 id="about-heading">About me</h2>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                I’m interested in the space where design, accessibility, content and development meet. My background in English Literature, Philosophy, communications and cooperative operations gives me a strong foundation in clear thinking, user empathy and practical problem-solving.
+              </p>
+              <p>
+                Since completing a full-stack development bootcamp, I’ve been building projects that focus on thoughtful interfaces, real user needs and systems that make information easier to understand and act on.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="skills-heading">Skills and focus areas</h2>
+          <p>Practical development skills supported by a strong interest in design clarity, accessibility and content structure.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+            <h3>Front-end development</h3>
+            <p>HTML, CSS, JavaScript, Bootstrap and responsive layouts.</p>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-python" aria-hidden="true"></i>
+            <h3>Back-end foundations</h3>
+            <p>Python, Django, data models, views, forms and admin workflows.</p>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+            <h3>UX and accessibility</h3>
+            <p>Clear navigation, semantic markup, accessible content and inclusive design choices.</p>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+            <h3>Content and communication</h3>
+            <p>Writing, editing, information hierarchy and user-friendly explanation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="section-heading mb-0">
+            <h2 id="contact-heading">Let’s connect</h2>
+            <p>
+              I’m open to junior front-end, UX-aware development, content design and project-based web work.
+            </p>
+          </div>
+          <div class="contact-links" aria-label="Contact links">
+            <a class="contact-link" href="mailto:hannahashe13@gmail.com">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i> Email
+            </a>
+            <a class="contact-link" href="https://github.com/hannahashe" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a class="contact-link" href="#" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="mb-0">© 2026 Moss A. Built with HTML, CSS and Bootstrap.</p>
+      <p class="mb-0">Accessible, responsive and intentionally simple.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>
