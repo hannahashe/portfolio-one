@@ -90,8 +90,7 @@ a:focus {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(238, 241, 223, 0.82);
-  backdrop-filter: blur(18px);
+  background: transparent;
   border-bottom: 1px solid rgba(199, 209, 184, 0.8);
 }
 
