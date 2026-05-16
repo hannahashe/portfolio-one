@@ -16,28 +16,27 @@
     />
 
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+    <script
+      src="https://kit.fontawesome.com/7bf12df681.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
-
+    <!-- <a class="skip-link" href="#main">Skip to main content</a> -->
     <header class="site-header">
       <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
         <div class="container">
-          <a class="navbar-brand" href="#top">Moss A</a>
+          <a class="navbar-brand" href="#top">Hannah A</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -55,7 +54,7 @@
           >
             <ul class="navbar-nav gap-lg-3">
               <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#projects">Selected Work</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
@@ -72,23 +71,34 @@
       </nav>
     </header>
 
+    <!-- Main content -->
     <main id="main">
+      <!-- Hero section -->
       <section class="hero" id="top">
         <div class="container">
-          <p class="eyebrow">
+          <!-- <p class="eyebrow">
             <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
             Design-minded developer
-          </p>
+          </p> -->
           <h1>
-            Visual artist, writer and design-minded developer creating clear,
-            accessible digital experiences.
+            Visual <span class="highlight">artist, writer</span> and
+            <span class="highlight">developer</span>
+            creating
+            <span class="highlight">accessible, envigorating</span>
+            digital experiences.
           </h1>
           <p class="lead">
             I combine illustration, content design and front-end development to
-            create websites and digital projects that feel thoughtful, usable
-            and visually distinctive. My work is especially focused on clarity,
-            accessibility, community-facing tools and creative storytelling.
+            create digital projects that feel clear, accessible and alive. My
+            work is rooted in visual storytelling, community-facing tools,
+            ecological thinking and thoughtful user experience.
           </p>
+          <ul class="practice-list" aria-label="Practice areas">
+            <li>Illustration</li>
+            <li>Content design</li>
+            <li>Front-end development</li>
+            <li>Accessible UX</li>
+          </ul>
           <div class="hero-actions">
             <a class="btn-primary-custom" href="#projects">
               View projects
@@ -101,7 +111,7 @@
           </div>
         </div>
       </section>
-
+      <!-- Selected Work Section -->
       <section id="projects" aria-labelledby="projects-heading">
         <div class="container">
           <div class="section-heading">
@@ -119,6 +129,7 @@
                 <div class="project-image" aria-hidden="true">
                   <i class="fa-solid fa-calendar-check"></i>
                 </div>
+                <p class="project-category">Development / UX / Accessibility</p>
                 <h3>Open Circle</h3>
                 <p>
                   A Django events directory focused on structured accessibility
@@ -141,6 +152,7 @@
                 <div class="project-image" aria-hidden="true">
                   <i class="fa-solid fa-leaf"></i>
                 </div>
+                <p class="project-category">Development / UX / Accessibility</p>
                 <h3>Let’s Go Foraging</h3>
                 <p>
                   A planned web presence for a foraging instructor, designed to
@@ -162,6 +174,7 @@
                 <div class="project-image" aria-hidden="true">
                   <i class="fa-solid fa-map-location-dot"></i>
                 </div>
+                <p class="project-category">Creative Tech / UI Design</p>
                 <h3>If That Was You</h3>
                 <p>
                   An experimental map-based interface using MapLibre, custom
@@ -184,6 +197,7 @@
                 <div class="project-image" aria-hidden="true">
                   <i class="fa-solid fa-universal-access"></i>
                 </div>
+                <p class="project-category">Visual Design</p>
                 <h3>Illustration & visual work</h3>
                 <p>
                   A selection of visual work, including digital illustration,
@@ -204,6 +218,7 @@
                 <div class="project-image" aria-hidden="true">
                   <i class="fa-solid fa-table-columns"></i>
                 </div>
+                <p class="project-category">Development / Data</p>
                 <h3>Relationship Constellation App</h3>
                 <p>
                   A personal relationship-mapping dashboard concept with
@@ -224,6 +239,7 @@
                 <div class="project-image" aria-hidden="true">
                   <i class="fa-solid fa-pen-ruler"></i>
                 </div>
+                <p class="project-category">Communication</p>
                 <h3>Writing & Content design</h3>
                 <p>
                   A selection of writing and content design work, including
@@ -242,7 +258,7 @@
           </div>
         </div>
       </section>
-
+      <!-- About Section -->
       <section id="about" aria-labelledby="about-heading">
         <div class="container">
           <div class="about-panel">
@@ -274,14 +290,14 @@
           </div>
         </div>
       </section>
-
+      <!-- Skills Section -->
       <section id="skills" aria-labelledby="skills-heading">
         <div class="container">
           <div class="section-heading">
-            <h2 id="skills-heading">Skills and focus areas</h2>
+            <h2 id="skills-heading">Toolkit</h2>
             <p>
-              Practical development skills supported by a strong interest in
-              design clarity, accessibility and content structure.
+              A mix of technical, visual and editorial skills for shaping
+              digital projects from idea to interface.
             </p>
           </div>
 
@@ -317,7 +333,7 @@
           </div>
         </div>
       </section>
-
+      <!-- Contact Section -->
       <section id="contact" aria-labelledby="contact-heading">
         <div class="container">
           <div class="contact-panel">
@@ -355,11 +371,12 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer>
       <div
         class="container d-flex flex-column flex-md-row justify-content-between gap-2"
       >
-        <p class="mb-0">© 2026 Moss A. Built with HTML, CSS and Bootstrap.</p>
+        <p class="mb-0">© 2026 Hannah A. Built with HTML, CSS and Bootstrap.</p>
         <p class="mb-0">Accessible, responsive and intentionally simple.</p>
       </div>
     </footer>
